@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Recipe / Cooking App</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🍳 Mini Recipe App</h1>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <div class="card">
+        <h2 id="form-title">Create Recipe</h2>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="e.g. Shakshuka" />
+        </div>
+
+        <div class="form-row">
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Snack">Snack</option>
+          </select>
+          <label for="time" class="small">Time (min)</label>
+          <input id="time" type="number" min="1" value="30" class="small" />
+        </div>
+
+        <div class="subcard">
+          <h3>Ingredients</h3>
+          <div id="ingredients-list"></div>
+          <div class="form-row inline">
+            <input id="ing-name" placeholder="Ingredient (e.g. Tomato)" />
+            <input id="ing-amount" placeholder="Amount (e.g. 2)" class="tiny"/>
+            <input id="ing-unit" placeholder="Unit (e.g. pcs, cup)" class="tiny"/>
+            <button id="add-ingredient">Add</button>
+          </div>
+        </div>
+
+        <div class="subcard">
+          <h3>Steps</h3>
+          <ol id="steps-list"></ol>
+          <div class="form-row inline">
+            <input id="step-text" placeholder="Step description" />
+            <button id="add-step">Add Step</button>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="image-url">Image URL (optional)</label>
+          <input id="image-url" placeholder="https://..." />
+        </div>
+
+        <div class="actions">
+          <button id="save-btn">Save Recipe</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="right">
+      <div class="card">
+        <h2>Recipes</h2>
+        <div id="recipes-list" class="recipes-list"></div>
+      </div>
+
+      <div class="card" id="preview-card" style="display:none;">
+        <h2>Preview</h2>
+        <div id="preview-content"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Mini Recipe App — Matin</small>
+  </footer>
+
+  <script type="module" src="./dist/app.js"></script>
+</body>
+</html>
